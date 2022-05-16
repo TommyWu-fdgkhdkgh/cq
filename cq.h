@@ -45,7 +45,7 @@ public:
     void enQueue(T newElement) {
         assert(numOfElements != content.size());
         content[tail] = newElement;
-        tail = (tail + 1) % numOfElements;
+        tail = (tail + 1) % content.size();
         numOfElements++;   
     }
 
@@ -64,7 +64,13 @@ public:
         assert(0 != numOfElements);
         unsigned int tmp = head;
         head = (head + 1) % content.size(); 
+        numOfElements--;
         return content[tmp];
+    }
+
+    T peekQueue() {
+        assert(0 != numOfElements);
+        return content[head];
     }
 };
 
