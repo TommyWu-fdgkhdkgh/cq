@@ -1,3 +1,0 @@
-llvm-profdata merge -sparse default.profraw -o default.profdata
----
-llvm-cov show ./foo -instr-profile=default.profdata
